@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chá de Bebê do Felipe</title>
+    <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English&display=swap" rel="stylesheet">
+    <style>
+        @font-face {
+            font-family: 'HarryPotter';
+            src: url('https://cdn.jsdelivr.net/gh/ThalisAlves/convite-bebe-felipe/HarryPotter.ttf') format('truetype');
+        }
+        body {
+            text-align: center;
+            background: url('https://wallpaperaccess.com/full/3644696.jpg') no-repeat center center fixed;
+            background-size: cover;
+            font-family: 'IM Fell English', serif;
+            color: #fff;
+            overflow: hidden;
+            transition: background 0.6s ease-in-out;
+        }
+        .fade-out {
+            background: black !important;
+        }
+        .container {
+            margin-top: 20%;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            display: inline-block;
+            position: relative;
+            transition: transform 0.6s ease-in-out;
+        }
+        h1 {
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(255, 255, 0, 0.8);
+            font-family: 'HarryPotter', serif;
+        }
+        button {
+            background-color: #ffcc00;
+            border: none;
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 1.2em;
+            cursor: pointer;
+            border-radius: 5px;
+            font-family: 'IM Fell English', serif;
+        }
+        button:hover {
+            background-color: #d4a000;
+        }
+    </style>
+</head>
+<body>
+    <audio autoplay loop>
+        <source src="https://cdn.pixabay.com/download/audio/2023/05/30/audio_f2921e4bb9.mp3?filename=harry-potter-music-box-116090.mp3" type="audio/mpeg">
+    </audio>
+    <div class="container" id="container">
+        <h1>CHÁ DE BEBÊ DO FELIPE</h1>
+        <button onclick="animarTransicao('confirmacao.html')">Confirmar Presença</button>
+        <button onclick="animarTransicao('endereco.html')">Endereço e Horário</button>
+        <button onclick="animarTransicao('naovou.html')">Infelizmente, não vou</button>
+    </div>
+    <script>
+        function animarTransicao(destino) {
+            document.body.classList.add('fade-out');
+            document.getElementById('container').style.transform = 'translateX(-100%)';
+            setTimeout(() => {
+                window.location.href = destino;
+            }, 600);
+        }
+    </script>
+</body>
+</html>
